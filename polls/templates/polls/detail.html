@@ -1,3 +1,9 @@
+{% load static %}
+<html>
+    <head>
+        <title>Lotus Polls</title>
+        <link rel="stylesheet" href="{% static 'css/polls.css' %}">
+<body>
 <h1>{{ question.question_text }}</h1>
 
 {% if error_message %}
@@ -14,8 +20,14 @@
     {% endfor %}
     <input type="submit" value="Vote" />
 </form>
-<ul>
+
+ <ul>
 {% for choice in question.choice_set.all %}
     <li>{{ choice.choice_text }}</li>
 {% endfor %}
 </ul>
+
+
+
+</body>
+</html>
